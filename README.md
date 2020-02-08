@@ -5,7 +5,7 @@ Search star wars planets
 - For username and password check https://swapi.co/documentation#people
 
   - ```Username``` is person's ```name```
-  - ```Password``` is person' ```birth_year```
+  - ```Password``` is person's ```birth_year```
 
 - For planets check https://swapi.co/documentation#planets
 
