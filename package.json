@@ -1,27 +1,46 @@
 {
   "name": "star-wars",
   "version": "1.0.0",
+  "description": "Search star wars planets",
   "scripts": {
+    "postinstall": "lerna bootstrap",
     "clean": "lerna clean -y",
-    "bootstrap": "lerna bootstrap",
     "start": "lerna run --parallel --stream start",
-    "lint": "eslint \"packages/**/*.{js,jsx}\" --cache --cache-location \".cache/.eslintcache/\"",
+    "lint": "eslint \"packages/**/src/**/*.{js,jsx}\" --cache --cache-location \".cache/.eslintcache/\"",
     "format": "npm run lint -- --fix",
     "test": "lerna run test --stream",
     "check": "npm run lint && npm run test",
-    "build": "lerna run build --stream"
+    "build": "lerna run build --stream",
+    "serve": "lerna run serve --parallel --stream"
+  },
+  "engines": {
+    "node": "10.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pgmanutd/star-wars.git"
+  },
+  "keywords": [
+    "react",
+    "hooks",
+    "custom-hooks"
+  ],
+  "author": "pgmanutd <prashantmanunited@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pgmanutd/star-wars/issues"
   },
   "devDependencies": {
-    "babel-eslint": "^10.0.2",
-    "eslint": "^6.1.0",
-    "eslint-config-airbnb": "^18.0.0",
-    "eslint-config-prettier": "^6.0.0",
-    "eslint-plugin-import": "^2.18.2",
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-prettier": "^3.1.0",
-    "eslint-plugin-react": "^7.14.3",
-    "eslint-plugin-react-hooks": "^1.7.0",
-    "lerna": "^3.16.4",
-    "prettier": "^1.18.2"
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.18.3",
+    "eslint-plugin-react-hooks": "^2.3.0",
+    "lerna": "^3.20.2",
+    "prettier": "^1.19.1"
   }
 }

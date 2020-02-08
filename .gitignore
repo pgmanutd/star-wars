@@ -87,5 +87,9 @@ typings/
 # DynamoDB Local files
 .dynamodb/
 
+# Production
+build
+dist
+
 # macos
 .DS_Store

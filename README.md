@@ -1,13 +1,20 @@
 # 🎉 star-wars
 
+Search star wars planets
+
+- For username and password check https://swapi.co/documentation#people
+
+  - ```Username``` is person's ```name```
+  - ```Password``` is person' ```birth_year```
+
+- For planets check https://swapi.co/documentation#planets
+
 ## Development
 
 Open your favorite Terminal and run these commands:
 
 ```bash
 npm install
-
-npm run bootstrap
 
 cp ./packages/client/.env.example ./packages/client/.env
 
@@ -26,10 +33,6 @@ In the project directory, you can run:
 ### `npm run clean`
 
 Removes node_modules from lerna packages
-
-### `npm run bootstrap`
-
-Add node_modules to lerna packages
 
 ### `npm start`
 

@@ -6,6 +6,12 @@
       {
         "root": ["./src"]
       }
-    ]
+    ],
+    ["@babel/plugin-transform-runtime",
+      {
+        "regenerator": true
+      }
+    ],
+    "transform-node-env-inline"
   ]
 }
