@@ -12,7 +12,9 @@
     "@apollo/react-hooks": "^3.1.3",
     "apollo-boost": "^0.4.7",
     "bootstrap": "^4.4.1",
+    "cross-env": "^7.0.0",
     "graphql": "^14.6.0",
+    "history": "^4.10.1",
     "http-server": "^0.12.1",
     "lodash": "^4.17.15",
     "prop-types": "^15.7.2",
@@ -24,8 +26,6 @@
   "devDependencies": {
     "@testing-library/jest-dom": "^5.1.1",
     "@testing-library/react": "^9.4.0",
-    "cross-env": "^7.0.0",
-    "history": "^4.10.1",
     "http-proxy-middleware": "^0.20.0",
     "jest-localstorage-mock": "^2.4.0"
   },
