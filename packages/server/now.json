@@ -1,0 +1,78 @@
+{
+  "version": 2,
+  "name": "star-wars",
+  "builds": [
+    {
+      "src": "packages/client/package.json",
+      "use": "@now/static-build",
+      "config": {
+        "distDir": "build"
+      }
+    },
+    { "src": "packages/server/build", "use": "@now/node" }
+  ],
+  "routes": [
+    {
+      "src": "/api/graphql",
+      "status": 301,
+      "headers": { "Location": "/graphql" }
+    },
+    {
+      "src": "/api/graphql/(.*)",
+      "status": 301,
+      "headers": { "Location": "/graphql/$1" }
+    },
+    {
+      "src": "/graphql",
+      "dest": "packages/server/build"
+    },
+    {
+      "src": "/graphql/(.*)",
+      "dest": "packages/server/build/$1"
+    },
+    {
+      "src": "/static/(.*)",
+      "headers": {
+        "cache-control": "s-maxage=31536000,immutable"
+      },
+      "dest": "packages/client/build/static/$1"
+    },
+    {
+      "src": "/images/(.*)",
+      "headers": {
+        "cache-control": "s-maxage=31536000,immutable"
+      },
+      "dest": "packages/client/build/images/$1"
+    },
+    {
+      "src": "/favicon.ico",
+      "dest": "packages/client/build/favicon.ico"
+    },
+    {
+      "src": "/asset-manifest.json",
+      "dest": "packages/client/build/asset-manifest.json"
+    },
+    {
+      "src": "/manifest.json",
+      "dest": "packages/client/build/manifest.json"
+    },
+    {
+      "src": "/precache-manifest.(.*)",
+      "dest": "packages/client/build/precache-manifest.$1"
+    },
+    {
+      "src": "/service-worker.js",
+      "headers": {
+        "cache-control": "s-maxage=0"
+      },
+      "dest": "packages/client/build/service-worker.js"
+    },
+    {
+      "src": "/(.*)",
+      "headers": {
+        "cache-control": "s-maxage=0"
+      },
+      "dest": "packages/client/build/index.html"
+    }
+  ]
+}
