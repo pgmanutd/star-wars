@@ -11,7 +11,8 @@
     "test": "lerna run test --stream",
     "check": "npm run lint && npm run test",
     "build": "lerna run build --stream",
-    "heroku-postbuild": "npm run build",
+    "heroku-prebuild": "export NPM_CONFIG_PRODUCTION=false; export NODE_ENV=; NPM_CONFIG_PRODUCTION=false NODE_ENV=development npm install --only=dev --dev",
+    "heroku-postbuild": "export NPM_CONFIG_PRODUCTION=true; export NODE_ENV=production; npm run build",
     "serve": "lerna run serve --parallel --stream"
   },
   "engines": {
