@@ -11,10 +11,11 @@
     "test": "lerna run test --stream",
     "check": "npm run lint && npm run test",
     "build": "lerna run build --stream",
+    "heroku-postbuild": "npm run build",
     "serve": "lerna run serve --parallel --stream"
   },
   "engines": {
-    "node": "10.x"
+    "node": "12.x"
   },
   "repository": {
     "type": "git",
