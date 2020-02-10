@@ -11,8 +11,8 @@
     "test": "lerna run test --stream",
     "check": "npm run lint && npm run test",
     "build": "lerna run build --stream",
-    "heroku-prebuild": "export NPM_CONFIG_PRODUCTION=false; export NODE_ENV=; NPM_CONFIG_PRODUCTION=false NODE_ENV=development npm install --only=dev --dev",
-    "heroku-postbuild": "export NPM_CONFIG_PRODUCTION=true; export NODE_ENV=production; npm run build",
+    "heroku-prebuild": "export NPM_CONFIG_PRODUCTION=false;",
+    "heroku-postbuild": "npm run build",
     "serve": "lerna run serve --parallel --stream"
   },
   "engines": {
@@ -32,6 +32,9 @@
   "bugs": {
     "url": "https://github.com/pgmanutd/star-wars/issues"
   },
+  "dependencies": {
+    "lerna": "^3.20.2"
+  },
   "devDependencies": {
     "babel-eslint": "^10.0.3",
     "eslint": "^6.8.0",
@@ -42,7 +45,6 @@
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.18.3",
     "eslint-plugin-react-hooks": "^2.3.0",
-    "lerna": "^3.20.2",
     "prettier": "^1.19.1"
   }
 }
