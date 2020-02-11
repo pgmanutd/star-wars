@@ -2,6 +2,10 @@
   "version": 2,
   "cleanUrls": true,
   "trailingSlash": false,
+  "builds": [
+    { "src": "packages/client/build/**", "use": "@now/static" },
+    { "src": "packages/server/build/index.js", "use": "@now/node" }
+  ],
   "rewrites": [
     {
       "source": "/api/graphql",
