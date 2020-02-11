@@ -6,10 +6,10 @@
       "src": "packages/client/package.json",
       "use": "@now/static-build",
       "config": {
-        "distDir": "packages/client/build"
+        "distDir": "build"
       }
     },
-    { "src": "packages/server/build", "use": "@now/node" }
+    { "src": "packages/server/build/index.js", "use": "@now/node" }
   ],
   "routes": [
     {
@@ -24,7 +24,7 @@
     },
     {
       "src": "/graphql",
-      "dest": "packages/server/build"
+      "dest": "packages/server/build/index.js"
     },
     {
       "src": "/graphql/(.*)",
