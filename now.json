@@ -4,7 +4,7 @@
   "trailingSlash": false,
   "builds": [
     { "src": "packages/client/build/**", "use": "@now/static" },
-    { "src": "packages/server/build/index.js", "use": "@now/node" }
+    { "src": "packages/server/build/**", "use": "@now/node" }
   ],
   "rewrites": [
     {
