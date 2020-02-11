@@ -24,55 +24,55 @@
     },
     {
       "src": "/graphql",
-      "dest": "packages/server/build/index.js"
+      "dest": "/packages/server/build/index.js"
     },
     {
       "src": "/graphql/(.*)",
-      "dest": "packages/server/build/$1"
+      "dest": "/packages/server/build/$1"
     },
     {
       "src": "/static/(.*)",
       "headers": {
         "cache-control": "s-maxage=31536000,immutable"
       },
-      "dest": "packages/client/build/static/$1"
+      "dest": "/packages/client/build/static/$1"
     },
     {
       "src": "/images/(.*)",
       "headers": {
         "cache-control": "s-maxage=31536000,immutable"
       },
-      "dest": "packages/client/build/images/$1"
+      "dest": "/packages/client/build/images/$1"
     },
     {
       "src": "/favicon.ico",
-      "dest": "packages/client/build/favicon.ico"
+      "dest": "/packages/client/build/favicon.ico"
     },
     {
       "src": "/asset-manifest.json",
-      "dest": "packages/client/build/asset-manifest.json"
+      "dest": "/packages/client/build/asset-manifest.json"
     },
     {
       "src": "/manifest.json",
-      "dest": "packages/client/build/manifest.json"
+      "dest": "/packages/client/build/manifest.json"
     },
     {
       "src": "/precache-manifest.(.*)",
-      "dest": "packages/client/build/precache-manifest.$1"
+      "dest": "/packages/client/build/precache-manifest.$1"
     },
     {
       "src": "/service-worker.js",
       "headers": {
         "cache-control": "s-maxage=0"
       },
-      "dest": "packages/client/build/service-worker.js"
+      "dest": "/packages/client/build/service-worker.js"
     },
     {
       "src": "/(.*)",
       "headers": {
         "cache-control": "s-maxage=0"
       },
-      "dest": "packages/client/build/index.html"
+      "dest": "/packages/client/build/index.html"
     }
   ]
 }
