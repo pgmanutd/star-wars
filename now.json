@@ -1,78 +1,85 @@
 {
   "version": 2,
-  "name": "star-wars",
-  "builds": [
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
     {
-      "src": "packages/client/package.json",
-      "use": "@now/static-build",
-      "config": {
-        "distDir": "build"
-      }
+      "source": "/api/graphql",
+      "destination": "packages/server/build/index.js"
     },
-    { "src": "packages/server/build/index.js", "use": "@now/node" }
+    {
+      "source": "/api/graphql/(.*)",
+      "destination": "packages/server/build/$1"
+    },
+    {
+      "source": "/static/(.*)",
+      "destination": "packages/client/build/static/$1"
+    },
+    {
+      "source": "/images/(.*)",
+      "destination": "packages/client/build/images/$1"
+    },
+    {
+      "source": "/favicon.ico",
+      "destination": "packages/client/build/favicon.ico"
+    },
+    {
+      "source": "/asset-manifest.json",
+      "destination": "packages/client/build/asset-manifest.json"
+    },
+    {
+      "source": "/manifest.json",
+      "destination": "packages/client/build/manifest.json"
+    },
+    {
+      "source": "/precache-manifest.(.*)",
+      "destination": "packages/client/build/precache-manifest.$1"
+    },
+    {
+      "source": "/service-worker.js",
+      "destination": "packages/client/build/service-worker.js"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "packages/client/build/index.html"
+    }
   ],
-  "routes": [
+  "headers": [
     {
-      "src": "/api/graphql",
-      "status": 301,
-      "headers": { "Location": "/graphql" }
+      "source": "/static/(.*)",
+      "headers": [
+        {
+          "key": "cache-control",
+          "value": "s-maxage=31536000,immutable"
+        }
+      ]
     },
     {
-      "src": "/api/graphql/(.*)",
-      "status": 301,
-      "headers": { "Location": "/graphql/$1" }
+      "source": "/images/(.*)",
+      "headers": [
+        {
+          "key": "cache-control",
+          "value": "s-maxage=31536000,immutable"
+        }
+      ]
     },
     {
-      "src": "/graphql",
-      "dest": "/packages/server/build/index.js"
+      "source": "/service-worker.js",
+      "headers": [
+        {
+          "key": "cache-control",
+          "value": "s-maxage=0"
+        }
+      ]
     },
     {
-      "src": "/graphql/(.*)",
-      "dest": "/packages/server/build/$1"
-    },
-    {
-      "src": "/static/(.*)",
-      "headers": {
-        "cache-control": "s-maxage=31536000,immutable"
-      },
-      "dest": "/packages/client/build/static/$1"
-    },
-    {
-      "src": "/images/(.*)",
-      "headers": {
-        "cache-control": "s-maxage=31536000,immutable"
-      },
-      "dest": "/packages/client/build/images/$1"
-    },
-    {
-      "src": "/favicon.ico",
-      "dest": "/packages/client/build/favicon.ico"
-    },
-    {
-      "src": "/asset-manifest.json",
-      "dest": "/packages/client/build/asset-manifest.json"
-    },
-    {
-      "src": "/manifest.json",
-      "dest": "/packages/client/build/manifest.json"
-    },
-    {
-      "src": "/precache-manifest.(.*)",
-      "dest": "/packages/client/build/precache-manifest.$1"
-    },
-    {
-      "src": "/service-worker.js",
-      "headers": {
-        "cache-control": "s-maxage=0"
-      },
-      "dest": "/packages/client/build/service-worker.js"
-    },
-    {
-      "src": "/(.*)",
-      "headers": {
-        "cache-control": "s-maxage=0"
-      },
-      "dest": "/packages/client/build/index.html"
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "cache-control",
+          "value": "s-maxage=0"
+        }
+      ]
     }
   ]
 }
