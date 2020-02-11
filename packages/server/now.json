@@ -6,7 +6,7 @@
       "src": "packages/client/package.json",
       "use": "@now/static-build",
       "config": {
-        "distDir": "build"
+        "distDir": "packages/client/build"
       }
     },
     { "src": "packages/server/build", "use": "@now/node" }
