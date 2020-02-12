@@ -10,6 +10,6 @@
   status = 200
 
 [[redirects]]
-  from = "/api/*"
+  from = "/api"
   to = "/.netlify/functions/server/graphql"
   status = 200
