@@ -1,6 +1,6 @@
 [build]
   base = "packages/"
-  command = "npm run build"
+  command = "npm install && npm run build"
   functions = "packages/server/netlify-lambda"
   publish = "packages/client/build"
 
