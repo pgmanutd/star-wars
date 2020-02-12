@@ -5,11 +5,12 @@
   publish = "client/build"
 
 [[redirects]]
+  from = "/api"
+  to = "/.netlify/functions/server/graphql"
+  status = 200
+
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
 
-[[redirects]]
-  from = "/api"
-  to = "/.netlify/functions/server/graphql"
-  status = 200
