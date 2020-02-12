@@ -8,6 +8,7 @@
   from = "/api"
   to = "/.netlify/functions/server/graphql"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/*"
