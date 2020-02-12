@@ -1,10 +1,15 @@
 [build]
   base = "packages/"
   command = "npm install && npm run build"
-  functions = "packages/server/netlify-lambda"
-  publish = "packages/client/build"
+  functions = "server/netlify-lambda"
+  publish = "client/build"
 
 [[redirects]]
   from = "/*"
   to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/server/graphql"
   status = 200
