@@ -1,0 +1,10 @@
+[build]
+  base = "packages/"
+  command = "npm run build"
+  functions = "packages/server/netlify-lambda"
+  publish = "packages/client/build"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

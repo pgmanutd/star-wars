@@ -5,6 +5,7 @@
   "scripts": {
     "postinstall": "lerna bootstrap",
     "clean": "lerna clean -y",
+    "clean:build": "lerna run clean:build --stream",
     "start": "lerna run --parallel --stream start",
     "lint": "eslint \"packages/**/src/**/*.{js,jsx}\" --cache --cache-location \".cache/.eslintcache/\"",
     "format": "npm run lint -- --fix",

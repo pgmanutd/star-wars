@@ -93,3 +93,7 @@ dist
 
 # macos
 .DS_Store
+
+# netlify
+.netlify
+netlify-lambda/

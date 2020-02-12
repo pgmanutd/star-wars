@@ -8,7 +8,7 @@ const getLogger = module =>
     level: 'debug',
     format: format.combine(
       format.label({
-        label: module.filename
+        label: (module.filename || __filename)
           .split('/')
           .slice(-2)
           .join('/'),

@@ -1,22 +1,26 @@
 import express from 'express';
 import graphqlHTTP from 'express-graphql';
 import cors from 'cors';
+import serverless from 'serverless-http';
 
-import getLogger from './shared/utils/getLogger';
+import '../shared/settings/defaults';
+
+import getLogger from '../shared/utils/getLogger';
+
+import authentication from '../features/authentication';
+import planets from '../features/planets';
+
+import schema from '../schema';
 
 import securityMiddleware from './middlewares/securityMiddleware';
 
-import authentication from './features/authentication';
-import planets from './features/planets';
-
-import schema from './schema';
-
 const logger = getLogger(module);
 const app = express();
+const router = express.Router();
 
 securityMiddleware(app);
 
-app.use(
+router.use(
   '/graphql',
   cors(),
   graphqlHTTP(req => {
@@ -64,6 +68,8 @@ app.use(
   }),
 );
 
-app.listen(process.env.EXPRESS_GRAPHQL_PORT || 4000, () =>
-  logger.info('Now browse to localhost:4000/graphql'),
-);
+app.use('/', router)
+app.use('/.netlify/functions/server', router);
+
+export const handler = serverless(app);
+export default app;
