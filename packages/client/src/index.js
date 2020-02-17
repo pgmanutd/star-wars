@@ -17,7 +17,7 @@ import { unregister as unregisterServiceWorker } from './serviceWorker';
 import './index.css';
 
 const client = new ApolloClient({
-  uri: '/api',
+  uri: process.env.API_ENDPOINT || '/api',
   request: operation => {
     const token = getKeyFromLocalStorage(LOCAL_STORAGE_KEYS.token);
 
