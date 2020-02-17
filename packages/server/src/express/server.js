@@ -20,7 +20,7 @@ const router = express.Router();
 
 securityMiddleware(app);
 
-router.use(
+router.all(
   '/graphql',
   cors(),
   graphqlHTTP(req => {
@@ -68,7 +68,7 @@ router.use(
   }),
 );
 
-app.use('/', router)
+app.use('/', router);
 app.use('/.netlify/functions/server', router);
 
 export const handler = serverless(app);
