@@ -22,9 +22,21 @@
     "url": "git+https://github.com/pgmanutd/star-wars.git"
   },
   "keywords": [
+    "star-wars",
     "react",
+    "reacthooks",
+    "lerna",
+    "monorepo",
+    "netlify",
+    "lambda",
+    "aws-lambda",
+    "graphql",
+    "apollo-client",
+    "express-graphql",
     "hooks",
-    "custom-hooks"
+    "custom-hooks",
+    "react-testing-library",
+    "lint"
   ],
   "author": "pgmanutd <prashantmanunited@gmail.com>",
   "license": "MIT",
