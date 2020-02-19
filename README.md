@@ -32,24 +32,36 @@ In the project directory, you can run:
 
 ### `npm run clean`
 
-Removes node_modules from lerna packages
+Removes node_modules from lerna packages.
+
+### `npm run clean:build`
+
+Removes build, .netlify and netlify-lambda folders from lerna packages.
 
 ### `npm start`
 
-Runs client and server
+Runs client and server in development mode.
 
 ### `npm run lint`
 
-Lints client and server using eslint
+Lints client and server using eslint.
 
 ### `npm run format`
 
-Formats client and server using prettier
+Formats client and server using prettier.
 
 ### `npm test`
 
-Runs client and server tests
+Runs client and server tests.
 
 ### `npm run check`
 
-Run lint and tests
+Run lint and tests.
+
+### `npm run build`
+
+Builds the app for production to the `build` folder.
+
+### `npm run serve`
+
+Runs the app from build folder.
