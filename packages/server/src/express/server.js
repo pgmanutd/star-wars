@@ -2,6 +2,7 @@ import express from 'express';
 import graphqlHTTP from 'express-graphql';
 import cors from 'cors';
 import serverless from 'serverless-http';
+import bodyParser from 'body-parser';
 
 import '../shared/settings/defaults';
 
@@ -20,7 +21,7 @@ const router = express.Router();
 
 securityMiddleware(app);
 
-router.all(
+router.use(
   '/graphql',
   cors(),
   graphqlHTTP(req => {
@@ -68,6 +69,7 @@ router.all(
   }),
 );
 
+app.use(bodyParser.json());
 app.use('/', router);
 app.use('/.netlify/functions/server', router);
 
