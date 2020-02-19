@@ -8,6 +8,7 @@ const getLogger = module =>
     level: 'debug',
     format: format.combine(
       format.label({
+        // TODO: module.filename is undefined when we are build standalone lambda's
         label: (module.filename || __filename)
           .split('/')
           .slice(-2)
