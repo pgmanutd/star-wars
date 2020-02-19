@@ -1,7 +1,11 @@
 /* eslint-disable import/no-extraneous-dependencies */
 
-const proxy = require('http-proxy-middleware');
+const { createProxyMiddleware } = require('http-proxy-middleware');
 
 module.exports = app => {
-  app.use(proxy('/api', { target: process.env.REACT_APP_PROXY_SERVER }));
+  app.use(
+    createProxyMiddleware('/api', {
+      target: process.env.REACT_APP_PROXY_SERVER,
+    }),
+  );
 };
