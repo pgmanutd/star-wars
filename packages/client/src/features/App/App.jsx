@@ -14,7 +14,7 @@ import {
   useAuthenticationContext,
 } from 'shared/context/authentication';
 
-const App = props => {
+const App = (props) => {
   const authenticationContextValue = useAuthenticationContext();
 
   return (

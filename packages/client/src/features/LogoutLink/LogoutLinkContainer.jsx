@@ -4,7 +4,7 @@ import { AuthenticationContext } from 'shared/context/authentication';
 
 import LogoutLink from './LogoutLink';
 
-const LogoutLinkContainer = props => {
+const LogoutLinkContainer = (props) => {
   const { removeAuthenticationDetails } = useContext(AuthenticationContext);
 
   return (

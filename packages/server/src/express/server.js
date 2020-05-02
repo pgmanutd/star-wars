@@ -24,7 +24,7 @@ securityMiddleware(app);
 router.use(
   '/graphql',
   cors(),
-  graphqlHTTP(req => {
+  graphqlHTTP((req) => {
     const startTime = Date.now();
 
     const user = authentication.domainServices.getUserUsingAuthorizationHeader(

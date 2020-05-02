@@ -5,7 +5,7 @@ export const LOCAL_STORAGE_KEYS = {
   user: 'star-wars:user',
 };
 
-export const removeKeyFromLocalStorage = key => {
+export const removeKeyFromLocalStorage = (key) => {
   localStorage.removeItem(key);
 };
 
@@ -13,6 +13,6 @@ export const addKeyToLocalStorage = (key, value) => {
   localStorage.setItem(key, JSON.stringify(value));
 };
 
-export const getKeyFromLocalStorage = key => {
+export const getKeyFromLocalStorage = (key) => {
   return parseJSON(localStorage.getItem(key));
 };

@@ -2,12 +2,12 @@
 
 Search star wars planets
 
-- For username and password check https://swapi.co/api/people
+- For username and password check https://swapi.dev/api/people
 
   - ```Username``` is person's ```name```
   - ```Password``` is person's ```birth_year```
 
-- For planets check https://swapi.co/api/planets. You can search planets by their names.
+- For planets check https://swapi.dev/api/planets. You can search planets by their names.
 
 ## Development
 

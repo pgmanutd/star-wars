@@ -1,6 +1,6 @@
 import helmet from 'helmet';
 
-const securityMiddleware = server => {
+const securityMiddleware = (server) => {
   server.disable('x-powered-by');
 
   server.use(helmet.xssFilter());

@@ -3,16 +3,13 @@ import _isEmpty from 'lodash/fp/isEmpty';
 
 import prettify from './prettify';
 
-const getLogger = module =>
+const getLogger = (module) =>
   createLogger({
     level: 'debug',
     format: format.combine(
       format.label({
         // TODO: module.filename is undefined when we are build standalone lambda's
-        label: (module.filename || __filename)
-          .split('/')
-          .slice(-2)
-          .join('/'),
+        label: (module.filename || __filename).split('/').slice(-2).join('/'),
       }),
       format.colorize(),
       format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),

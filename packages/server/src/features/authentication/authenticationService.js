@@ -47,7 +47,7 @@ export const loginUser = async (
   };
 };
 
-export const isUserAuthenticated = user => {
+export const isUserAuthenticated = (user) => {
   logger.info(`Called #isUserAuthenticated with User: ${prettify(user)}`);
 
   return checkUserAuthentication(user);

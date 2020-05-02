@@ -11,7 +11,7 @@ import {
   getPlanetsListingStyles,
 } from './searchPlanetsUtils';
 
-const SearchPlanets = props => {
+const SearchPlanets = (props) => {
   const [planetName, setPlaneName] = useState('');
   const [getPlanets, { loading, error, data }] = useLazyQuery(GET_PLANETS);
 
@@ -21,7 +21,7 @@ const SearchPlanets = props => {
   );
 
   const handlePlanetNameChange = useCallback(
-    event => {
+    (event) => {
       const newPlanetName = event.target.value;
 
       setPlaneName(newPlanetName);

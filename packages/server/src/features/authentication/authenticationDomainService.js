@@ -28,10 +28,10 @@ export const pickQueriedUser = (
   { userFields, authenticatedUserDetailsFields },
 ) => _pick(_intersection(userFields, authenticatedUserDetailsFields), user);
 
-export const getJWTToken = user =>
+export const getJWTToken = (user) =>
   jwt.sign({ user }, process.env.JWT_APP_SECRET);
 
-export const getUserUsingAuthorizationHeader = authorizationHeader => {
+export const getUserUsingAuthorizationHeader = (authorizationHeader) => {
   try {
     const token = authorizationHeader.replace('Bearer ', '');
 
@@ -43,7 +43,7 @@ export const getUserUsingAuthorizationHeader = authorizationHeader => {
   }
 };
 
-export const checkUserAuthentication = user => {
+export const checkUserAuthentication = (user) => {
   const isUserAuthenticated = !!user;
 
   if (!isUserAuthenticated) {
@@ -55,8 +55,9 @@ export const checkUserAuthentication = user => {
 
 // NOTE: Please use lru/timeout based cache.
 const cache = new Map();
-const removeTokens = limiter => limiter.tryRemoveTokens(1);
-const shouldSkipRateLimiterForUser = user => user.name === process.env.GOD_USER;
+const removeTokens = (limiter) => limiter.tryRemoveTokens(1);
+const shouldSkipRateLimiterForUser = (user) =>
+  user.name === process.env.GOD_USER;
 export const checkRateLimitForUser = (user, { ipAddress }) => {
   if (shouldSkipRateLimiterForUser(user)) {
     return;

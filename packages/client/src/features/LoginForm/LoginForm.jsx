@@ -6,7 +6,7 @@ import _compose from 'lodash/fp/compose';
 
 import { LOGIN_USER } from './graphql/mutations';
 
-const getValueFromEvent = event => event.target.value;
+const getValueFromEvent = (event) => event.target.value;
 
 const propTypes = {
   onLoginSuccess: PropTypes.func.isRequired,
@@ -24,7 +24,7 @@ const LoginForm = ({ onLoginSuccess, onLoginError, ...rest }) => {
   });
 
   const handleSubmit = useCallback(
-    event => {
+    (event) => {
       event.preventDefault();
 
       loginUser({ variables: { username, password } }).catch(onLoginError);

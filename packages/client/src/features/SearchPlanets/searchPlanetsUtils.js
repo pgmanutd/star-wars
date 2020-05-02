@@ -2,7 +2,7 @@ import _pathOr from 'lodash/fp/pathOr';
 import _maxBy from 'lodash/fp/maxBy';
 import _compose from 'lodash/fp/compose';
 
-const getNumericPopulation = population => Number(population);
+const getNumericPopulation = (population) => Number(population);
 
 export const getMaximumPlanetsPopulation = _compose(
   Number,

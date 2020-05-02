@@ -18,7 +18,7 @@ import './index.css';
 
 const client = new ApolloClient({
   uri: process.env.REACT_APP_API_ENDPOINT || '/api',
-  request: operation => {
+  request: (operation) => {
     const token = getKeyFromLocalStorage(LOCAL_STORAGE_KEYS.token);
 
     operation.setContext({
